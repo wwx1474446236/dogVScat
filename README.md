@@ -6,3 +6,7 @@
 #### PIL
 #### sklearn
 #### matplotlib
+
+
+## dataset:
+#### https://www.kaggle.com/shaunthesheep/microsoft-catsvsdogs-dataset?select=PetImages
