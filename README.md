@@ -14,7 +14,7 @@
 ## 关于改绝对地址 In CNN.py，please change address！
 #### processed_dir = "D:\\dataset\\dogVScat\\processed_img\\"
 #### csv_path = 'D:\\dataset\\dogVScat\\cat_dog.csv'
-#### 请把地址改成自己的！
+### 请把地址改成自己的！
 
 ## How to run this program 怎样运行:
 #### run toCSV.py to process data first, than CNN.py to train
