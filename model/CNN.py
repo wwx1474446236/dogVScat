@@ -18,7 +18,8 @@ from torch.utils.data import DataLoader, Dataset
 from sklearn.metrics import f1_score
 
 batch_size = 128
-
+processed_dir = "D:\\dataset\\dogVScat\\processed_img\\"
+csv_path = 'D:\\dataset\\dogVScat\\cat_dog.csv'
 
 # 构建数据集
 class dataset(Dataset):
@@ -28,7 +29,7 @@ class dataset(Dataset):
 
     def __getitem__(self, item):
         current_data = self.csv.iloc[item]
-        work_dir = "D:\\dataset\\dogVScat\\processed_img\\" + str(current_data['category'])
+        work_dir = processed_dir + str(current_data['category'])
         file_name = str(current_data['index'])+'.jpg'
         path = os.path.join(work_dir, file_name)
         image = Image.open(path)
@@ -87,7 +88,7 @@ data_tf = transforms.Compose(
     [transforms.ToTensor(),
      transforms.Normalize([0.5], [0.5])])
 
-csv = pd.read_csv('D:\dataset\dogVScat\cat_dog.csv')
+csv = pd.read_csv(csv_path)
 total_data = dataset(csv, transform=data_tf)
 
 # 80% Training Set，10% Valid Set，10% Test Set
