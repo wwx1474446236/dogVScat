@@ -15,3 +15,7 @@
 #### processed_dir = "D:\\dataset\\dogVScat\\processed_img\\"
 #### csv_path = 'D:\\dataset\\dogVScat\\cat_dog.csv'
 #### 请把地址改成自己的！
+
+## 关于使用
+#### 1. 先运行 toCSV.py  Run toCSV.py first
+#### 2. then run train.py

@@ -5,7 +5,7 @@ DOG VS CAT (猫狗大战)
 Author：Wang Weixing (王卫星)
 """
 
-from model.CNN import data_tf, Net
+from dataloaders import data_tf
 import torch
 from PIL import Image
 
@@ -21,7 +21,7 @@ def app(path):
     if img.mode != "RGB":
         img = img.convert('RGB')
     img = data_tf(img)
-    model_path = './saved_model/cnn.pkl'
+    model_path = './saved_model/resnet.pth'
     if torch.cuda.is_available():
         model_test = torch.load(model_path)
     else:
@@ -46,5 +46,5 @@ if __name__ == '__main__':
     # TEST Function, switch by comment
     print('Application')
 
-    print(app('D:\\dataset\\dogVScat\\PetImages\\Cat\\0.jpg'))
+    print(app('C:\\Users\\weixing wang\\Pictures\\Saved Pictures\\wangweixing.jpg'))
 
