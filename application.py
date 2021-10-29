@@ -21,7 +21,7 @@ def app(path):
     if img.mode != "RGB":
         img = img.convert('RGB')
     img = data_tf(img)
-    model_path = './saved_model/resnet.pth'
+    model_path = './saved_model/all_resnet.pth'
     if torch.cuda.is_available():
         model_test = torch.load(model_path)
     else:

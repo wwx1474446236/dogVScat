@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Oct 24 13:23:15 2021
+DOG VS CAT (猫狗大战)
+Author：Wang Weixing (王卫星)
+"""
 from dataloaders import test_loader, valid_loader, train_loader
 from model.torch_model import initialize_model
 import torch
@@ -21,6 +27,7 @@ optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.5)
 
 
 def train(epoch):
+    model.train()
     running_loss = 0.0
     for batch_idx, data in enumerate(train_loader, 0):
         # Obtain data and labels for a batch
